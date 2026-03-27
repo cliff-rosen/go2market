@@ -4,6 +4,82 @@
 
 An agent system that continuously monitors online communities for conversations where our products are relevant, surfaces the highest-signal opportunities, and supports engagement — whether automated or human-driven.
 
+---
+
+## The Cold Start Problem
+
+We have two things: products we know well, and API access to hundreds of thousands of communities. The gap between those two things is the entire challenge.
+
+"Monitor everything" is not a first move — it's drowning. The first move has to be narrow, intentional, and designed to learn.
+
+### The Lamppost Principle
+
+There's an old joke about searching for your keys under the streetlight because that's where the light is. We're doing something similar — and that's okay, as long as we're honest about it.
+
+**Our API access is already a filter on the market.** Reddit gives us broad, deep access to virtually any interest community. HN gives us a tech-savvy slice. Discord requires admin invitations. Niche forums vary. This means:
+
+- We can see some segments of the market clearly (Reddit communities, HN threads, open forums)
+- We can see other segments dimly (gated Discord servers, closed Slack groups)
+- Some segments we can't see at all (private networks, enterprise circles, offline communities)
+
+**This is not a bug — it's a strategic input.** Instead of choosing our target market and then figuring out how to reach them, we should factor reachability into the targeting decision itself. A vertical where the community is active on Reddit and Discourse is *more actionable* than one where everyone's in closed Slack groups, even if the latter is theoretically a bigger market.
+
+### Verticalization: The TableThat Problem
+
+TableThat is a general-purpose product. General-purpose is a positioning death sentence at launch. Nobody searches for "general purpose table tool." They search for "inventory tracker for Etsy sellers" or "research data organizer for grad students."
+
+Even if we don't change a line of code, we need to **sell it vertically** to get traction. The question is: which vertical?
+
+### The Vertical Selection Framework
+
+The right vertical sits at the intersection of four factors:
+
+```
+                    ┌─────────────────┐
+                    │  Product Fit     │
+                    │  Does TableThat  │
+                    │  solve a real    │
+                    │  pain here?      │
+                    └────────┬────────┘
+                             │
+              ┌──────────────┼──────────────┐
+              │              │              │
+    ┌─────────▼────┐  ┌─────▼──────┐  ┌───▼──────────┐
+    │ Community     │  │ Signal     │  │ Competition  │
+    │ Reachability  │  │ Density    │  │ Gap          │
+    │               │  │            │  │              │
+    │ Can our APIs  │  │ Are people │  │ Are existing │
+    │ actually see  │  │ actively   │  │ solutions    │
+    │ and reach     │  │ discussing │  │ weak or      │
+    │ this audience?│  │ this       │  │ missing?     │
+    │               │  │ problem?   │  │              │
+    └──────────────┘  └────────────┘  └──────────────┘
+```
+
+**All four must overlap.** A vertical with great product fit but no reachable community is a dead end. A vertical with active communities but no real pain is noise. A vertical with pain and communities but strong incumbents is a war of attrition.
+
+### The First Move: Vertical Discovery Sprint
+
+Before we monitor anything, we need to answer: **which verticals should we target?**
+
+This is itself an agent task:
+
+1. **Enumerate candidate verticals** for TableThat — brainstorm the categories of users who could benefit from its current functionality
+2. **For each candidate vertical, assess:**
+   - Community reachability: Which subreddits, forums, Discord servers, HN topics exist? How active are they? Can we monitor them via API?
+   - Signal density: Are people in those communities talking about the problem TableThat solves? How often? How urgently?
+   - Competition: What tools do they currently use? Are they satisfied?
+3. **Rank verticals** by the overlap score across all four factors
+4. **Pick 1-2 verticals** to go deep on first
+
+This sprint produces the targeting that feeds everything else: which communities to monitor, what keywords to track, what messaging to craft, what the "activation moment" looks like for these specific users.
+
+### For KH
+
+KH may or may not need the same verticalization exercise — it depends on how specific its value prop already is. But the reachability analysis applies regardless: where is KH's audience, and can we reach them through our APIs?
+
+---
+
 ## The Reality Check
 
 Across every platform we researched, the same pattern holds: **monitoring is easy; automated engagement is hard or forbidden.** This shapes the entire architecture.
@@ -237,8 +313,21 @@ Since automated engagement is restricted or risky on every major platform, the s
 
 ## Open Questions
 
-- Which specific subreddits, Discord servers, and forums are most relevant for KH vs. TableThat?
-- What keywords and problem-space language should the relevance engine look for?
+### Vertical Selection (Highest Priority)
+- What are the candidate verticals for TableThat? What types of users benefit from its current functionality?
+- Does KH need verticalization, or is its value prop already specific enough?
+- Can we run the vertical discovery sprint with agents — enumerate candidates, assess reachability, score signal density?
+
+### Targeting
+- For the selected verticals: which specific subreddits, Discord servers, and forums are most active?
+- What keywords and problem-space language does this vertical use? (Not our language — *their* language)
+- What does the competitive landscape look like in the selected verticals?
+
+### Execution
 - Do we start with existing tools (Syften/F5Bot) for quick wins, or build the custom pipeline from day one?
 - Who handles the human-in-the-loop engagement? Is this us, or do we eventually hire for this?
 - What's the budget for API access if we need Reddit's commercial tier?
+
+### The Lamppost Question
+- What important market segments are we *missing* because our APIs can't see them?
+- Are there creative ways to extend our reach (e.g., partnerships with community admins, newsletter sponsorships, podcast appearances) into segments where API monitoring is blind?

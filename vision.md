@@ -32,23 +32,46 @@ The agent advantage isn't volume — it's *research depth*. A human can monitor 
 
 ## Pillar 2: Product Loop
 
-**Goal:** Continuously understand where users get value, where they drop off, and what to build next.
+**Goal:** Close the delta between MVP and product-market fit as fast as possible.
 
-### Instrument
-- Track the user journey from first touch through activation to retention
-- Define what "activation" means for each product (the moment a user gets real value)
-- Capture both quantitative signals (usage events, funnel metrics) and qualitative signals (support conversations, feedback, reviews)
+### The Core Model
 
-### Synthesize
-- Agent digests raw signals into actionable patterns: "Users who do X in the first session retain at 3x the rate" or "40% of churned users hit the same wall at step Y"
-- Surface these as prioritized insights, not dashboards full of charts
+There is always a gap between what an MVP delivers and what product-market fit looks like. Even a random walk through feature space would eventually find PMF — given infinite time. Two things compress that timeline:
 
-### Act
-- Feed insights directly into product decisions: what to build, what to fix, what to cut
-- Close the loop — track whether changes actually moved the needle
+1. **Velocity** — how fast you can ship changes
+2. **Aim** — knowing *which* changes matter
+
+Velocity without aim is a random walk. Aim without velocity is a whiteboard. The product loop's job is to provide the aim.
+
+### Drivers of the Delta
+
+The critical challenge: define the *drivers* that measure the distance between what users currently get and product-market fit. These are the signals that tell you whether you're converging or wandering.
+
+Candidate driver categories:
+- **Activation gap** — are users reaching the moment where they get real value? How many? How fast? What blocks them?
+- **Retention signal** — do users come back? What distinguishes users who stay from those who don't?
+- **Value frequency** — how often does the product deliver its core value? (Daily tool vs. occasional utility changes everything)
+- **Effort-to-value ratio** — how much work does the user put in vs. how much value they extract? PMF feels effortless.
+- **Word-of-mouth readiness** — would a user recommend this? Not as a survey — as observed behavior (shares, invites, mentions)
+
+### The Measurement Problem
+
+Getting drivers right is necessary but not sufficient. You also have to *measure* them accurately. This means:
+- Instrumenting the product to capture the right events
+- Capturing qualitative signal (what users say, not just what they do)
+- Having the agent synthesize both into a coherent read on each driver
+
+### The Loop
+
+```
+Define drivers → Measure drivers → Ship changes aimed at drivers → Re-measure → Refine drivers
+```
+
+Each cycle should answer: "Did that change move us closer to PMF, and how do we know?"
 
 ### Key Insight
-The product loop isn't analytics. It's an *opinionated agent* that tells you what's working and what isn't, with evidence. The goal is product-market fit, not data.
+
+The product loop is a *control system*. The drivers are your sensors. The agent is your feedback processor. Feature velocity is your actuator. Get the sensors wrong and nothing else matters — you're steering blind.
 
 ---
 
@@ -64,5 +87,7 @@ Agent-driven GTM: continuous research + continuous synthesis + tight feedback lo
 
 - What are the specific value props and target users for KH and TableThat?
 - Which outreach channels have the highest signal for each product's audience?
-- What does "activation" look like for each product?
+- What does "activation" look like for each product — what's the moment of real value?
+- What are the right drivers for each product? (The candidate categories above need to be made concrete per product)
+- How do we instrument the products to capture driver signals without over-engineering?
 - What's the MVP scope for the agent systems themselves?

@@ -15,18 +15,63 @@ We use AI agents not just *in* our products, but to *launch* them. Two autonomou
 
 **Goal:** Identify who our users are, where they are, and reach them with the right message in the right channel.
 
-### Research Phase
-- Profile the ideal user for each product (role, pain points, context)
-- Map where those people actually spend time: specific subreddits, Discord servers, HN threads, niche forums, LinkedIn groups, newsletters, Twitter/X communities
-- Rank channels by signal density (where are people *actively talking about this problem*?) not just audience size
+The outreach engine operates in three distinct modes. These are not interchangeable — each has its own targeting unit, agent behavior, data model, and success metrics.
 
-### Engagement Phase
-- Craft channel-native messaging — a Reddit comment is not an email is not a LinkedIn post
-- Prioritize value-first engagement: answer questions, share insights, demonstrate expertise before pitching
-- Use email strategically (warm intros, follow-ups to engaged users) not as the primary cold channel
+### Mode A: Conversation-First (Reddit, HN, Discord, Forums)
 
-### Key Insight
-The agent advantage isn't volume — it's *research depth*. A human can monitor 3 subreddits. An agent can monitor 300 and surface the 5 conversations that matter today.
+**Targeting unit:** A thread or post — not a person.
+
+**How it works:**
+1. **Discover** — Identify communities where our problem space is actively discussed. Find the specific subreddits, Discord servers, HN topics, and niche forums where people talk about the pain our products address.
+2. **Monitor** — Continuously scan for high-signal posts: "I'm struggling with X", "looking for a tool that does Y", "how do you handle Z?" These are people with an active, immediate need.
+3. **Engage** — Craft a response that genuinely helps, with the product as a natural part of the answer. The value must be real — communities will punish anything that smells like astroturfing.
+
+**Agent role:** Scanner and drafter. The agent monitors at a scale no human can (hundreds of communities), surfaces the conversations that matter, and drafts contextual responses for review or auto-posting.
+
+**Success metrics:** Engagement quality (upvotes, replies, follow-on questions), click-throughs to product, signups attributed to community engagement.
+
+**Key risk:** Getting banned. The line between helpful participant and shill is community-defined and strict. The agent must understand community norms.
+
+### Mode B: Person-First (LinkedIn, Email, Direct Outreach)
+
+**Targeting unit:** An individual person.
+
+**How it works:**
+1. **Identify** — Build a target profile: role, company, industry, likely pain points. Who specifically would benefit from each product?
+2. **Research** — Deep-dive on each target before contact. What have they posted about? What's their company doing? What problems are they likely facing *right now*? This is where most AI outreach fails — they skip this step entirely.
+3. **Reach out** — Craft a message that demonstrates genuine understanding of this person's situation. Not a template with {first_name} swapped in. A message that could only have been written for them.
+
+**Agent role:** Researcher and composer. The heavy lift is research — building a rich picture of each target so the outreach is relevant. The agent compresses hours of research into seconds per target, but invests that time in quality, not volume.
+
+**Success metrics:** Reply rate (not open rate), conversation quality, meetings booked, conversions. A single meaningful reply outweighs 1,000 ignored emails.
+
+**Key risk:** Irrelevance. If the research is shallow, the message is spam. The entire value proposition collapses. Better to reach 10 people well than 1,000 badly.
+
+**Anti-pattern to avoid:** The current state of AI outreach — mass personalization that fools nobody. "I noticed your company does [scraped tagline]" is not research. The bar is: could this message only have been written for this specific person?
+
+### Mode C: Content & Magnet (Blog, Twitter/X, Newsletters, SEO)
+
+**Targeting unit:** A topic or keyword — not a person or conversation.
+
+**How it works:**
+1. **Identify** — Find the topics, questions, and search terms our target users care about. What are they Googling? What content gaps exist?
+2. **Create** — Produce content that genuinely addresses those topics: blog posts, Twitter threads, short-form insights, how-to guides. The product is the backstory, not the headline.
+3. **Distribute** — Put content where it'll be found: SEO for search, social for discovery, newsletters for retention. Build a presence that attracts inbound interest over time.
+
+**Agent role:** Researcher, drafter, and distributor. The agent identifies content opportunities, drafts material, and handles distribution cadence. Human review for voice and quality.
+
+**Success metrics:** Inbound traffic, content-attributed signups, email list growth, search ranking for target terms.
+
+**Key risk:** Generic content. AI can produce volume effortlessly, but generic content is noise. The content must reflect genuine insight about the problem space — not "Top 10 Tips" filler.
+
+### Cross-Mode Insight
+
+The three modes reinforce each other:
+- **Conversation-first** surfaces real language and pain points → feeds **content** topics and **person-first** targeting
+- **Content** builds credibility → makes **person-first** outreach warmer and **conversation-first** engagement more authoritative
+- **Person-first** conversations reveal individual needs → inform **conversation-first** monitoring and **content** direction
+
+The agent advantage isn't volume in any mode — it's *research depth and coverage*. A human can monitor 3 subreddits, research 5 prospects, and write 1 article a week. The agent can monitor 300, research 50, and draft 5 — all feeding each other.
 
 ---
 

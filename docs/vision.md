@@ -69,6 +69,12 @@ The bar is: could this message only have been written for this specific person? 
 
 This is a completely different motion. We're not reaching out to someone; we're showing up where conversations are already happening. The challenge is that the universe of communities and posts is enormous, so the entire system is a series of filters.
 
+There are two modes of community engagement:
+
+- **Reactive:** We find an existing post where someone is describing a problem we solve, and we engage in that thread. This is the primary mode — it's lower risk and naturally contextual.
+
+- **Proactive:** We create our own post in a community. This is only appropriate *after* we've established through monitoring that the community has active, ongoing discussion around the problem space we address. You don't walk into a room and start talking about yourself — you listen first, confirm the topic is live, and then contribute something original that fits the conversation the community is already having. The bar for a self-generated post is higher: it must stand on its own as genuinely useful content, not just a vehicle for a product mention.
+
 ### The Pipeline
 
 **1. Community Filtering → Monitoring Set**
@@ -96,16 +102,24 @@ This is where scale matters — a human can follow a handful of threads; the age
 
 Once we've found a post worth engaging with, the engagement itself is fundamentally different from person-driven outreach. Every post is a different setting: different community norms, different conversation context, different tone expectations. There is no reusable template.
 
-The engagement algorithm must:
+For **reactive engagement** (responding to existing posts), the algorithm must:
 
 - Understand the specific context of this post and thread
 - Respect the norms of this particular community
 - Craft a response that is genuinely helpful independent of any product mention
 - Adapt the approach each time — unlike a drip campaign, there is no sequence to follow
 
+For **proactive engagement** (creating original posts), the prerequisites are stricter:
+
+- We must have monitored the community long enough to confirm active discussion in our problem space
+- The post must be native to the community's format and tone — a how-to, a comparison, a question, a resource share — whatever fits
+- The content must provide standalone value; a product mention, if present at all, should be incidental
+- Timing matters: the post should feel like a natural contribution to an ongoing conversation in the community, not a cold drop
+
 ### Key Properties
-- The target is always a post, not a person
+- The target is always a post, not a person — whether we're responding to someone else's post or creating our own
 - The funnel is a series of filters: platforms → communities → posts → engagement-worthy posts
+- Proactive posting is unlocked only after monitoring confirms the community is actively discussing the relevant problem space
 - Every engagement is a one-shot in a unique context (vs. person-driven's sequential campaign)
 - Success metric: engagement quality (upvotes, replies, click-throughs), not reach
 
@@ -118,7 +132,7 @@ The engagement algorithm must:
 | **Unit** | Individual with an email | Post within a community |
 | **Starting point** | We find them | They surface a need |
 | **Research** | Deep on one person | Broad across thousands of posts |
-| **Engagement** | Sequential drip campaign | One-shot adaptive response |
+| **Engagement** | Sequential drip campaign | One-shot adaptive response (reactive) or original post (proactive, after establishing community fit) |
 | **State** | Stateful (each touch depends on history) | Stateless (each post is independent) |
 | **Bottleneck** | Research quality per person | Filtering efficiency across communities |
 | **Risk** | Spam (bad research) | Bans (bad community fit) |

@@ -1,3 +1,5 @@
+> **⚠ DEPRECATED — This was an early exploration of community-driven outreach. The language and framing predate our current thinking (see [vision.md](vision.md) and [vertical-playbook.md](vertical-playbook.md)). Technical details on API access and platform constraints are still useful as reference, but the strategic framing is outdated.**
+
 # Mode A: Conversation-First Outreach — Deep Dive
 
 ## What This Is

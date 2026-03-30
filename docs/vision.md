@@ -1,138 +1,124 @@
 # Agent-Driven Go-to-Market — Vision
 
-## The Bet
+## First Principles
 
-We use AI agents not just *in* our products, but to *launch* them. Two autonomous systems work in parallel: one finds and reaches our market, the other closes the feedback loop to product-market fit.
+Every go-to-market motion reduces to one question: how do you get in front of the right person with the right message? The approaches differ in what you're targeting:
 
-## Products
+| Channel | Unit of Engagement | Description |
+|---|---|---|
+| **Person-driven** | An individual with an email | Direct outreach — research a specific person, craft a message for them |
+| **Community-driven** | A post within a community | Show up where conversations are already happening |
+| **Advertising** | A cohort or persona | Pay to put a message in front of a defined audience segment |
+| **Content** | A topic | Create material that attracts inbound interest over time |
 
-- **KH** — [TBD: core value prop and target user]
-- **TableThat** — [TBD: core value prop and target user]
-
----
-
-## Pillar 1: Outreach Engine
-
-**Goal:** Identify who our users are, where they are, and reach them with the right message in the right channel.
-
-The outreach engine operates in three distinct modes. These are not interchangeable — each has its own targeting unit, agent behavior, data model, and success metrics.
-
-### Mode A: Conversation-First (Reddit, HN, Discord, Forums)
-
-**Targeting unit:** A thread or post — not a person.
-
-**How it works:**
-1. **Discover** — Identify communities where our problem space is actively discussed. Find the specific subreddits, Discord servers, HN topics, and niche forums where people talk about the pain our products address.
-2. **Monitor** — Continuously scan for high-signal posts: "I'm struggling with X", "looking for a tool that does Y", "how do you handle Z?" These are people with an active, immediate need.
-3. **Engage** — Craft a response that genuinely helps, with the product as a natural part of the answer. The value must be real — communities will punish anything that smells like astroturfing.
-
-**Agent role:** Scanner and drafter. The agent monitors at a scale no human can (hundreds of communities), surfaces the conversations that matter, and drafts contextual responses for review or auto-posting.
-
-**Success metrics:** Engagement quality (upvotes, replies, follow-on questions), click-throughs to product, signups attributed to community engagement.
-
-**Key risk:** Getting banned. The line between helpful participant and shill is community-defined and strict. The agent must understand community norms.
-
-### Mode B: Person-First (LinkedIn, Email, Direct Outreach)
-
-**Targeting unit:** An individual person.
-
-**How it works:**
-1. **Identify** — Build a target profile: role, company, industry, likely pain points. Who specifically would benefit from each product?
-2. **Research** — Deep-dive on each target before contact. What have they posted about? What's their company doing? What problems are they likely facing *right now*? This is where most AI outreach fails — they skip this step entirely.
-3. **Reach out** — Craft a message that demonstrates genuine understanding of this person's situation. Not a template with {first_name} swapped in. A message that could only have been written for them.
-
-**Agent role:** Researcher and composer. The heavy lift is research — building a rich picture of each target so the outreach is relevant. The agent compresses hours of research into seconds per target, but invests that time in quality, not volume.
-
-**Success metrics:** Reply rate (not open rate), conversation quality, meetings booked, conversions. A single meaningful reply outweighs 1,000 ignored emails.
-
-**Key risk:** Irrelevance. If the research is shallow, the message is spam. The entire value proposition collapses. Better to reach 10 people well than 1,000 badly.
-
-**Anti-pattern to avoid:** The current state of AI outreach — mass personalization that fools nobody. "I noticed your company does [scraped tagline]" is not research. The bar is: could this message only have been written for this specific person?
-
-### Mode C: Content & Magnet (Blog, Twitter/X, Newsletters, SEO)
-
-**Targeting unit:** A topic or keyword — not a person or conversation.
-
-**How it works:**
-1. **Identify** — Find the topics, questions, and search terms our target users care about. What are they Googling? What content gaps exist?
-2. **Create** — Produce content that genuinely addresses those topics: blog posts, Twitter threads, short-form insights, how-to guides. The product is the backstory, not the headline.
-3. **Distribute** — Put content where it'll be found: SEO for search, social for discovery, newsletters for retention. Build a presence that attracts inbound interest over time.
-
-**Agent role:** Researcher, drafter, and distributor. The agent identifies content opportunities, drafts material, and handles distribution cadence. Human review for voice and quality.
-
-**Success metrics:** Inbound traffic, content-attributed signups, email list growth, search ranking for target terms.
-
-**Key risk:** Generic content. AI can produce volume effortlessly, but generic content is noise. The content must reflect genuine insight about the problem space — not "Top 10 Tips" filler.
-
-### Cross-Mode Insight
-
-The three modes reinforce each other:
-- **Conversation-first** surfaces real language and pain points → feeds **content** topics and **person-first** targeting
-- **Content** builds credibility → makes **person-first** outreach warmer and **conversation-first** engagement more authoritative
-- **Person-first** conversations reveal individual needs → inform **conversation-first** monitoring and **content** direction
-
-The agent advantage isn't volume in any mode — it's *research depth and coverage*. A human can monitor 3 subreddits, research 5 prospects, and write 1 article a week. The agent can monitor 300, research 50, and draft 5 — all feeding each other.
+There could be others. We're focusing on the first two — person-driven and community-driven — because they're the highest-leverage channels for agent-driven automation and the ones where research depth matters most.
 
 ---
 
-## Pillar 2: Product Loop
+## Pillar 1: Person-Driven
 
-**Goal:** Close the delta between MVP and product-market fit as fast as possible.
+**Unit of engagement:** A real-world individual with an email address.
 
-### The Core Model
+This is direct outreach. We know (or can infer) who the person is before we ever contact them. The entire workflow is a pipeline from identification to conversation.
 
-There is always a gap between what an MVP delivers and what product-market fit looks like. Even a random walk through feature space would eventually find PMF — given infinite time. Two things compress that timeline:
+### The Pipeline
 
-1. **Velocity** — how fast you can ship changes
-2. **Aim** — knowing *which* changes matter
+**1. Research → Funnel Entry**
 
-Velocity without aim is a random walk. Aim without velocity is a whiteboard. The product loop's job is to provide the aim.
+The first job is finding people who plausibly need what we're building. This is the top of the funnel — sourcing targets from LinkedIn, company directories, community profiles, event attendee lists, wherever real people with real roles surface. The agent's job here is volume with signal: cast wide, but filter hard.
 
-### Drivers of the Delta
+**2. Deep Research → Message Crafting**
 
-The critical challenge: define the *drivers* that measure the distance between what users currently get and product-market fit. These are the signals that tell you whether you're converging or wandering.
+Once someone enters the funnel, the heavy work begins. Before any outreach, we build a rich picture of this specific person: what they've posted, what their company does, what problems they're likely facing right now. This research is the entire difference between outreach that gets a reply and outreach that gets deleted.
 
-Candidate driver categories:
-- **Activation gap** — are users reaching the moment where they get real value? How many? How fast? What blocks them?
-- **Retention signal** — do users come back? What distinguishes users who stay from those who don't?
-- **Value frequency** — how often does the product deliver its core value? (Daily tool vs. occasional utility changes everything)
-- **Effort-to-value ratio** — how much work does the user put in vs. how much value they extract? PMF feels effortless.
-- **Word-of-mouth readiness** — would a user recommend this? Not as a survey — as observed behavior (shares, invites, mentions)
+The message must pass one test: *could this only have been written for this person?* If you could swap in a different name and it still makes sense, it's spam.
 
-### The Measurement Problem
+**3. Drip Campaign**
 
-Getting drivers right is necessary but not sufficient. You also have to *measure* them accurately. This means:
-- Instrumenting the product to capture the right events
-- Capturing qualitative signal (what users say, not just what they do)
-- Having the agent synthesize both into a coherent read on each driver
+After the first touch, we run a short, highly customized sequence. Each message builds on the last and adapts to signal (or silence). This is not a generic cadence — every step reflects what we know about this person and how they've responded.
 
-### The Loop
+### The Anti-Pattern
 
-```
-Define drivers → Measure drivers → Ship changes aimed at drivers → Re-measure → Refine drivers
-```
+The current state of AI outreach is mass personalization that fools nobody. "I noticed your company does [scraped tagline]" is not research. Templates with `{first_name}` swapped in are not personalization. If the research is shallow, the message is spam — and the entire value proposition collapses. Better to reach 10 people well than 1,000 badly.
 
-Each cycle should answer: "Did that change move us closer to PMF, and how do we know?"
+The bar is: could this message only have been written for this specific person? If you could swap in a different name and it still makes sense, it's spam.
 
-### Key Insight
-
-The product loop is a *control system*. The drivers are your sensors. The agent is your feedback processor. Feature velocity is your actuator. Get the sensors wrong and nothing else matters — you're steering blind.
+### Key Properties
+- The target is always a known individual
+- Research quality is the bottleneck — shallow research kills everything downstream
+- The campaign is sequential and stateful (each touch depends on the last)
+- Success metric: reply rate and conversation quality, not volume
 
 ---
 
-## What Makes This Different
+## Pillar 2: Community-Driven
 
-Traditional GTM: marketing team + analytics dashboard + intuition + quarterly reviews.
+**Unit of engagement:** A post within a community — not the community itself, and not a person.
 
-Agent-driven GTM: continuous research + continuous synthesis + tight feedback loops. The agents don't replace judgment — they compress the time between "we don't know" and "now we know."
+This is a completely different motion. We're not reaching out to someone; we're showing up where conversations are already happening. The challenge is that the universe of communities and posts is enormous, so the entire system is a series of filters.
+
+### The Pipeline
+
+**1. Community Filtering → Monitoring Set**
+
+We cannot monitor every post in every community across every medium. The first step is narrowing the universe to a manageable monitoring set. This is a strategic decision:
+
+- Which platforms can we access via API? (Reddit, HN, Discourse, Discord — each with different constraints)
+- Within each platform, which communities discuss problems we solve?
+- How active are they? Is there enough signal to justify monitoring?
+- Can we actually engage there, or is it read-only?
+
+The output is a curated set of communities worth watching. This set evolves as we learn.
+
+**2. Post Monitoring → Opportunity Detection**
+
+Within the monitoring set, we need an algorithm that continuously scans for posts worth engaging with. Not every post is relevant, and not every relevant post is actionable. The monitoring algorithm should:
+
+- Filter by keyword and topic relevance (fast, cheap pass)
+- Score surviving posts for signal: is this person describing a problem we solve? How urgent? How engaged is the thread?
+- Surface the highest-signal opportunities with enough context to act on
+
+This is where scale matters — a human can follow a handful of threads; the agent can scan thousands.
+
+**3. Engagement → Adaptive Response**
+
+Once we've found a post worth engaging with, the engagement itself is fundamentally different from person-driven outreach. Every post is a different setting: different community norms, different conversation context, different tone expectations. There is no reusable template.
+
+The engagement algorithm must:
+
+- Understand the specific context of this post and thread
+- Respect the norms of this particular community
+- Craft a response that is genuinely helpful independent of any product mention
+- Adapt the approach each time — unlike a drip campaign, there is no sequence to follow
+
+### Key Properties
+- The target is always a post, not a person
+- The funnel is a series of filters: platforms → communities → posts → engagement-worthy posts
+- Every engagement is a one-shot in a unique context (vs. person-driven's sequential campaign)
+- Success metric: engagement quality (upvotes, replies, click-throughs), not reach
+
+---
+
+## The Structural Difference
+
+| | Person-Driven | Community-Driven |
+|---|---|---|
+| **Unit** | Individual with an email | Post within a community |
+| **Starting point** | We find them | They surface a need |
+| **Research** | Deep on one person | Broad across thousands of posts |
+| **Engagement** | Sequential drip campaign | One-shot adaptive response |
+| **State** | Stateful (each touch depends on history) | Stateless (each post is independent) |
+| **Bottleneck** | Research quality per person | Filtering efficiency across communities |
+| **Risk** | Spam (bad research) | Bans (bad community fit) |
+
+Both pillars feed a shared product loop: community engagement surfaces real language and pain points, person-driven conversations reveal individual needs, and both inform what we build next.
 
 ---
 
 ## Open Questions
 
-- What are the specific value props and target users for KH and TableThat?
-- Which outreach channels have the highest signal for each product's audience?
-- What does "activation" look like for each product — what's the moment of real value?
-- What are the right drivers for each product? (The candidate categories above need to be made concrete per product)
-- How do we instrument the products to capture driver signals without over-engineering?
-- What's the MVP scope for the agent systems themselves?
+- Which products are we targeting with each pillar? Do both apply to both KH and TableThat?
+- For person-driven: what are the best sources for target identification in our verticals?
+- For community-driven: which platform × community combinations form the initial monitoring set?
+- How do we close the loop from engagement back to product development?
+- What's the MVP scope for each pillar's agent system?

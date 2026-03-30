@@ -4,14 +4,26 @@
 
 Every go-to-market motion reduces to one question: how do you get in front of the right person with the right message? The approaches differ in what you're targeting:
 
-| Channel | Unit of Engagement | Description |
+| Orientation | Possible Channels | Our Focus |
 |---|---|---|
-| **Person-driven** | An individual with an email | Direct outreach — research a specific person, craft a message for them |
-| **Community-driven** | A post within a community | Show up where conversations are already happening |
-| **Advertising** | A cohort or persona | Pay to put a message in front of a defined audience segment |
-| **Content** | A topic | Create material that attracts inbound interest over time |
+| **Person** | Email, phone, text, direct mail, LinkedIn DM, ... | Email |
+| **Community** | Online forums, social platforms, professional associations, meetups, conferences, ... | Reddit, HN, Discourse |
+| **Cohort / Persona** | Paid search, social ads, display, sponsorships, ... | — |
+| **Topic** | Blog, SEO, newsletters, Twitter/X, YouTube, ... | — |
 
-There could be others. We're focusing on the first two — person-driven and community-driven — because they're the highest-leverage channels for agent-driven automation and the ones where research depth matters most.
+Your **orientation** is the thing in the world that you believe has high affinity with your product. It's your theory of where demand lives — and that theory takes different shapes:
+
+- **Person:** You believe specific individuals have the problem you solve. You know (or can infer) who they are — by role, by company, by what they've posted or built. The bet is that if you can reach *this person* with the right message, there's a match. Why this person? Because something about their situation — their job, their industry, their public frustration — signals that they need what you're building.
+
+- **Community:** You believe the problem you solve is being actively discussed somewhere. Not by a specific person you've identified, but in a place where people with the problem gather and talk. The bet is that if you show up where the conversation is happening, you'll find demand in real time. Why this community? Because the people in it are already describing the pain your product addresses.
+
+- **Cohort / Persona:** You believe a category of people — defined by demographics, behavior, or role — has the problem, but you don't know them individually. The bet is that if you put a message in front of enough people matching the profile, some will convert. Why this cohort? Because the profile correlates with the need.
+
+- **Topic:** You believe people are searching for answers to questions your product addresses. The bet is that if you create the best content on that topic, demand will find you. Why this topic? Because search volume and content gaps signal unmet need.
+
+The channel is how you reach the thing you're oriented toward. There's no one-to-one mapping — each orientation has many possible channels. What matters is choosing the orientation first, then picking the channels that make sense for your situation.
+
+We're focusing on the first two orientations — person and community — because they're the highest-leverage for agent-driven automation and the ones where research depth matters most.
 
 ---
 

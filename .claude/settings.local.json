@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cmd.exe /c \"node --version\")",
+      "Bash(cmd.exe /c \"python --version\")",
+      "Bash(powershell.exe -Command \"node --version; npm --version; python --version\")"
+    ]
+  }
+}

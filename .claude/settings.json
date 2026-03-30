@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:orchestratorstudios.com)",
+      "Read(//c/code/**)",
+      "Bash(npm install:*)",
+      "Bash(pip install:*)",
+      "WebFetch(domain:www.reddit.com)",
+      "WebSearch"
+    ]
+  }
+}
